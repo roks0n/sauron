@@ -33,16 +33,16 @@ Monitoring:
 Target: https://podcasti.si/health/
 Metric: podcasti
 ---
-Target: https://google.com
-Metric: google
+Target: https://example.com
+Metric: example
 ---
 ```
 
 #### Remove target from Sauron's watchlist:
 
 ```bash
-> ./sauron remove https://google.com 
-https://google.com removed successfully.
+> ./sauron remove https://example.com 
+https://example.com removed successfully.
 ```
 
 #### Add target to Sauron's watchlist:
