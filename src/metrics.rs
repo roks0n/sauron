@@ -11,7 +11,6 @@ pub fn init_new_client(host: String, prefix: &str) -> Client {
     Client::new(host, prefix).unwrap()
 }
 
-
 #[allow(dead_code)]
 pub fn get_client() -> &'static CLIENT {
     &CLIENT

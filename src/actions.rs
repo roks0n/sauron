@@ -117,7 +117,7 @@ pub async fn watch() {
             break;
         }
 
-        // check().await;
+        check().await;
         sleep(Duration::from_secs(5)).await;
     }
     println!("Stopped watching");

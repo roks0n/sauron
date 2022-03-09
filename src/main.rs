@@ -53,9 +53,6 @@ async fn main() {
     dotenv().ok();
 
     let args = Cli::parse();
-    
-    // TODO:
-    // - early exit in run/watch/add/remove/list IF config is not set
 
     match &args.command {
         Commands::Run => {
