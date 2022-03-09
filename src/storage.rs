@@ -15,10 +15,9 @@ pub fn get_storage() -> File {
     let file;
     let storage_file_path = &format!("{}/{}/{}", home_dir, STORAGE_PATH, STORAGE_FILE);
     if !Path::new(storage_file_path).exists() {
-        file = File::create(storage_file_path).unwrap();
-    } else {
-        file = File::options().read(true).write(true).open(storage_file_path).unwrap();
+        File::create(storage_file_path).unwrap();
     }
 
+    file = File::options().read(true).write(true).open(storage_file_path).unwrap();
     file
 }
