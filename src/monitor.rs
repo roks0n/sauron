@@ -25,15 +25,17 @@ async fn healthcheck(t: Target) -> Result<HealthCheck, Box<dyn std::error::Error
     println!("Checking {}", t.target);
     let res = reqwest::get(&t.target).await;
     if res.is_err() {
-        panic!("Err {:?}", res);
+        return Ok(HealthCheck {
+            metric_name: t.metric_name,
+            latency: 0.0,
+            // status: res.status(),
+        });
     }
 
     let res = res.unwrap();
     if res.status() == reqwest::StatusCode::OK {
         success = true;
-        // println!("Request succeeded");
     } else {
-        // println!("Request failed with status code: {:?}", res.status());
         success = false;
     }
 
